@@ -74,7 +74,7 @@ public class FullText extends Text{
         if (createDeleteSvgFIle.checkFileYesNo() == true) {
             createDeleteSvgFIle.deleteFile();
         }
-        else {
+//        else {
             createDeleteSvgFIle.createFile();
             //Создаем строку из ArrayList
             StringBuilder builder = new StringBuilder();
@@ -82,7 +82,6 @@ public class FullText extends Text{
                 for (String value:text.getFullText()) {
                     builder.append(value);
                 }
-
             }
             String text = builder.toString();
 
@@ -90,7 +89,10 @@ public class FullText extends Text{
 //            WriteToSvg writeToSvg = new WriteToSvg(fullFilePath,this.fullText.toString());
             WriteToSvg writeToSvg = new WriteToSvg(fullFilePath,text);
             writeToSvg.fileWrite(true);
+//        }
+    }
 
-        }
+    public void clearAllEnteredBlockText() {
+        allEnteredBlockText.removeAll(allEnteredBlockText);
     }
 }
